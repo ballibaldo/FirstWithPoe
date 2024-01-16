@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project 2</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_proj2.css">
+  <script src="script.js"></script>
+  <include src="header.html"></include>
+  <script>
+    function submitForm() {
+      event.preventDefault(); // Prevent the default form submission behavior
+      var textarea = document.getElementById("user-text");
+      var rowCount = textarea.value.split("\n").length;
+      var charCount = textarea.value.length;
+      var result = document.getElementById("result");
+      result.textContent = "Rows: " + rowCount + ", Characters: " + charCount;
+    }
+  </script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <div id="menu-container"></div>
+  <h2>Project 2</h2>
+  <form action="#" method="post" onsubmit="submitForm(event);">
+    <div class="form-group">
+      <label for="user-text">Enter your text:</label>
+    </div>
+    <div class="form-group">
+      <textarea id="user-text" name="user-text" placeholder="Type your text here..." required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

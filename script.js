@@ -9,3 +9,18 @@
     };
     xhr.send();
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var menuContainer = document.getElementById('menu-container');
+  
+    fetch('menu.html')
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(menuHtml) {
+        menuContainer.innerHTML = menuHtml;
+      })
+      .catch(function(error) {
+        console.log('Error fetching the menu:', error);
+      });
+  });
